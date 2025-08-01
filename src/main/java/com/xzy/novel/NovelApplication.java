@@ -4,7 +4,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.ApplicationContext;
@@ -17,7 +19,7 @@ import java.util.Map;
  * @author xzy
  */
 @SpringBootApplication
-@MapperScan("com.xzy.novel.dao.mapper")
+//@MapperScan("com.xzy.novel.dao.mapper")
 @EnableCaching
 @Slf4j
 public class NovelApplication {
