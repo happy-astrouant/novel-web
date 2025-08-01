@@ -7,6 +7,7 @@ import org.springframework.cache.caffeine.CaffeineCache;
 import org.springframework.cache.support.SimpleCacheManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;
 import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.cache.RedisCacheWriter;
@@ -18,13 +19,14 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-//@Configuration
+@Configuration
 public class CacheConfig {
 
     /**
      * Caffeine 缓存管理器
      */
     @Bean
+    @Primary
     public CacheManager caffeineCacheManager() {
         SimpleCacheManager cacheManager = new SimpleCacheManager();
 

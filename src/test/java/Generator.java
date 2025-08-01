@@ -49,10 +49,10 @@ public class Generator {
         FastAutoGenerator.create(String.format("jdbc:mysql://%s:%s/%s?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai", DATABASE_IP, DATABASE_PORT, DATABASE_NAME), DATABASE_USERNAME, DATABASE_PASSWORD)
                 .globalConfig(builder -> {
                     builder.author(USERNAME) // 设置作者
-                            .fileOverride()
+                            //.fileOverride()
                             // kotlin
                             //.enableSwagger() // 开启 swagger 模式
-                            .fileOverride() // 覆盖已生成文件
+                            // .fileOverride() // 覆盖已生成文件
                             .commentDate("yyyy/MM/dd")
                             .outputDir(PROJECT_PATH + JAVA_PATH); // 指定输出目录
                 })

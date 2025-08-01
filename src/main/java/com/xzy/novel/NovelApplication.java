@@ -19,7 +19,7 @@ import java.util.Map;
  * @author xzy
  */
 @SpringBootApplication
-//@MapperScan("com.xzy.novel.dao.mapper")
+@MapperScan("com.xzy.novel.dao.mapper")
 @EnableCaching
 @Slf4j
 public class NovelApplication {
