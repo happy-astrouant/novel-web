@@ -1,0 +1,23 @@
+# docker-compose.yml
+version: '3.8' # docker-compose的版本号
+
+services:
+  redis:
+    image: redis:8.0
+    container_name: redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
+      - C:/docker-apps/redis-data/data:/data
+    command: >
+      sh -c '
+      redis-server /usr/local/etc/redis/redis.conf --requirepass $$REDIS_PASSWORD
+      '
+    environment:
+      REDIS_PASSWORD: MySuperSecurePass2025!
+
+volumes:
+  redis-data:
+  # Windows Docker 会自动管理命名卷，但这里我们用 bind mount
