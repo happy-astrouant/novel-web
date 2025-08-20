@@ -1,0 +1,1 @@
+docker exec 3b3 nginx -s reload

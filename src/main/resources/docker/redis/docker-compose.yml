@@ -11,12 +11,13 @@ services:
     volumes:
       - ./redis.conf:/usr/local/etc/redis/redis.conf
       - C:/docker-apps/redis-data/data:/data
+#    command: ["redis-server", "/usr/local/etc/redis.conf"]
     command: >
       sh -c '
       redis-server /usr/local/etc/redis/redis.conf --requirepass $$REDIS_PASSWORD
       '
     environment:
-      REDIS_PASSWORD: MySuperSecurePass2025!
+      REDIS_PASSWORD: 123456
 
 volumes:
   redis-data:

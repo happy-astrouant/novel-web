@@ -1,0 +1,1 @@
+docker run --rm -v "%cd%":/app -w /app node:16-alpine sh -c "npm install && npm run build"
