@@ -25,7 +25,7 @@ public class Generator {
     private static final String PROJECT_PATH = System.getProperty("user.dir");
     private static final String JAVA_PATH = "/src/main/java";
     private static final String RESOURCE_PATH = "/src/main/resources";
-    private static final String BASE_PACKAGE = "io.github.xxyopen.novel";
+    private static final String BASE_PACKAGE = "io.github.xzy.novel";
 
     /**
      * 数据库信息

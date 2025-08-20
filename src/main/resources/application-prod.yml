@@ -187,7 +187,7 @@ spring:
   mail:
     host: smtp.163.com
     #发件人昵称
-    nickname: xxyopen
+    nickname: xzy
     #邮箱账户
     username: xxx@163.com
     #邮箱第三方授权码
