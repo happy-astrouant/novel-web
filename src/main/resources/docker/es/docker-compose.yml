@@ -1,4 +1,5 @@
 version: '3.8'
+
 services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.2.0
@@ -7,12 +8,12 @@ services:
       - discovery.type=single-node
       - ES_JAVA_OPTS=-Xms1g -Xmx1g
       - xpack.security.enabled=true
-      - ELASTIC_PASSWORD=es123456
+      - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
     ports:
       - "9200:9200"
       - "9300:9300"
     volumes:
-      - C:/docker-apps/es-data/data:/usr/share/elasticsearch/data
+      - C:/docker-apps/es-data/data:/usr/share/elasticsearch/data  # 保持不变 ✅
     networks:
       - elk-network
 
@@ -23,15 +24,11 @@ services:
       - elasticsearch
     ports:
       - "5601:5601"
-    environment:
-      - ELASTICSEARCH_HOSTS=["http://elasticsearch:9200"]
-      - ELASTICSEARCH_USERNAME=elastic
-      - ELASTICSEARCH_PASSWORD=kb123456
+    # 使用挂载的 kibana.yml 配置文件，避免使用 ELASTICSEARCH_USERNAME
+    volumes:
+      - ./kibana.yml:/usr/share/kibana/config/kibana.yml
     networks:
       - elk-network
-
-volumes:
-  esdata:
 
 networks:
   elk-network:
