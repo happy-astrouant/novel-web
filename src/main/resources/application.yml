@@ -193,7 +193,7 @@ spring:
     #邮箱账户
     username: ofsignificance@qq.com
     #邮箱第三方授权码
-    password: tivwzcqfjfzfdjde
+    password: ${MAIL_PASSWORD}$
     #编码类型
     default-encoding: UTF-8
     port: 465
