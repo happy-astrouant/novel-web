@@ -231,6 +231,8 @@ novel:
       - http://localhost:1024
       - http://localhost:8080
       - http://localhost
+      - http://127.0.0.1
+      - http://49.233.108.236:8090
   # JWT 密钥
   jwt:
     secret: E66559580A1ADF48CDD928516062F12E
@@ -245,7 +247,7 @@ novel:
     # 文件上传配置
     upload:
       # 上传路径
-      path: /Users/xiongxiaoyang/upload
+      path: C:/xzy/upload
 
 
 --- #------------------- dev 特定配置---------------------------
