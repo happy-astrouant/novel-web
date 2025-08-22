@@ -1,5 +1,7 @@
 package io.github.xzy.novel.dto.resp;
 
+import io.github.xzy.novel.core.annotation.Desensitization;
+import io.github.xzy.novel.core.common.constant.DesensitizationTypeEnum;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;
 import lombok.Data;
@@ -30,5 +32,6 @@ public class UserInfoRespDto {
      * 用户性别
      * */
     @Schema(description = "用户性别")
+    @Desensitization(type = DesensitizationTypeEnum.GENDER)
     private Integer userSex;
 }

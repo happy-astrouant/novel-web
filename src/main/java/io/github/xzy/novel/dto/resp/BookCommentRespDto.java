@@ -2,6 +2,8 @@ package io.github.xzy.novel.dto.resp;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import io.github.xzy.novel.core.annotation.Desensitization;
+import io.github.xzy.novel.core.common.constant.DesensitizationTypeEnum;
 import io.github.xzy.novel.core.json.serializer.UsernameSerializer;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;
@@ -36,7 +38,8 @@ public class BookCommentRespDto {
         private String commentContent;
 
         @Schema(description = "评论用户")
-        @JsonSerialize(using = UsernameSerializer.class)
+//        @JsonSerialize(using = UsernameSerializer.class)
+        @Desensitization(type = DesensitizationTypeEnum.USER_ID)
         private String commentUser;
 
         @Schema(description = "评论用户ID")

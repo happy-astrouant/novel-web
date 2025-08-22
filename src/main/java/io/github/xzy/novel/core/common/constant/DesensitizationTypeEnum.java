@@ -18,5 +18,7 @@ public enum DesensitizationTypeEnum {
     // 地址
     ADDRESS,
     // 银行卡号
-    BANK_CARD
+    BANK_CARD,
+    // 性别
+    GENDER,
 }

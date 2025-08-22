@@ -45,6 +45,10 @@ public class DesensitizationSerialize extends JsonSerializer<String> implements 
                 break;
             case MOBILE_PHONE:
                 jsonGenerator.writeString(DesensitizedUtil.mobilePhone(str));
+                break;
+            case GENDER:
+                jsonGenerator.writeString(DesensitizedUtil.gender(str));
+                break;
             // 省略其他数据类型脱敏
             // ......
         }
