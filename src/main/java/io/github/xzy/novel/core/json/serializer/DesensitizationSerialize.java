@@ -43,6 +43,8 @@ public class DesensitizationSerialize extends JsonSerializer<String> implements 
             case CHINESE_NAME:
                 jsonGenerator.writeString(DesensitizedUtil.chineseName(String.valueOf(str)));
                 break;
+            case MOBILE_PHONE:
+                jsonGenerator.writeString(DesensitizedUtil.mobilePhone(str));
             // 省略其他数据类型脱敏
             // ......
         }

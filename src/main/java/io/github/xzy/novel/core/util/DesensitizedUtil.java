@@ -12,4 +12,12 @@ public class DesensitizedUtil {
     public static String chineseName(String s) {
         return s.charAt(0) + (s.length() > 2 ? "**" : "*");
     }
+
+    public static String mobilePhone(String str) {
+        return str.substring(0, 3) + "****" + str.substring(7);
+    }
+
+    public static String gender(String str) {
+        return "*";
+    }
 }
